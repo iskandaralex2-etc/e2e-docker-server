@@ -2,6 +2,8 @@ FROM openjdk:8-jre-slim
 
 RUN apt-get update
 
+WORKDIR /app
+
 COPY . .
 
 CMD java -Xmx4G \
