@@ -30,5 +30,5 @@ CMD java -Xmx4G \
 -Daikars.new.flags=true \
 -Dfml.readTimeout=180 \
 -Dfml.queryResult=confirm \
--jar forge-1.12.2-14.23.5.2860.jar \
+-jar /app/forge-1.12.2-14.23.5.2860.jar \
 nogui
