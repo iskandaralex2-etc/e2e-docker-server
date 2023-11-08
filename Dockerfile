@@ -6,6 +6,9 @@ WORKDIR /app
 
 COPY . .
 
+EXPOSE 25565/tcp
+EXPOSE 25565/udp
+
 CMD java -Xmx4G \
 -Xms2G \
 -XX:+UseG1GC \
