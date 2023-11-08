@@ -1,0 +1,21 @@
+version: '3' # lower version to work with current ubuntu lts
+services:
+  mindustry:
+    image: frankbaele/mindustry
+    
+    # enable tty and stdin to make `docker attach` work
+    tty: true
+    stdin_open: true
+
+    # trust no one :)
+    cap_drop:
+      - ALL
+
+    ports:
+      - "25565:25565/tcp"
+      - "25565:25565/udp"
+    restart: unless-stopped
+
+    # map config to host machine
+    volumes:
+      - ./mindustry_config:/config
