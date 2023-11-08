@@ -1,13 +1,12 @@
-version: '3' # lower version to work with current ubuntu lts
+version: '3'
 services:
   mindustry:
-    image: frankbaele/mindustry
+    image: e2e:latest # build your own image
     
     # enable tty and stdin to make `docker attach` work
     tty: true
     stdin_open: true
 
-    # trust no one :)
     cap_drop:
       - ALL
 
@@ -18,4 +17,7 @@ services:
 
     # map config to host machine
     volumes:
-      - ./mindustry_config:/config
+      - ./world:/world
+      - ./ops.json:/ops.json
+      - ./whitelist.json:/whitelist.json
+      - ./server.properties:/server.properties
