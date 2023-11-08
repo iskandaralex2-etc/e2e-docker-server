@@ -1,6 +1,6 @@
 version: '3'
 services:
-  mindustry:
+  e2e:
     image: e2e:latest # build your own image
     
     # enable tty and stdin to make `docker attach` work
@@ -17,4 +17,7 @@ services:
 
     # map config to host machine
     volumes:
-      - ./e2e:/app
+      - ./world:/app/world
+      - ./server.properties:/app/server.properties
+      - ./whitelist.json:/app/server.properties
+      - ./ops.json:/app/ops.json
